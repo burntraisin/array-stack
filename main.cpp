@@ -18,13 +18,15 @@ int main() {
     bool isElementValid = false;
 
     do {
-        cout << "Enter a number to perform one of the following on the stack: "
+        cout << "-----------------------------------------------------------"
+        << '\n' << "Enter a number to perform one of the following on the stack: "
         << '\n' << "1. Pop"
         << '\n' << "2. Push"
         << '\n' << "3. Top"
         << '\n' << "4. Size"
         << '\n' << "5. Empty"
         << '\n' << "0. Quit"
+        << '\n' << "-----------------------------------------------------------"
         << endl;
         cin >> userChoice;
 
@@ -89,12 +91,12 @@ void top() {
         cout << "ERROR: Stack underflow. Stack is empty." << endl;
     }
     else {
-        cout << stack[currentPointer] << endl;
+        cout << "Top of the stack: " << stack[currentPointer] << endl;
     }
 }
 
 void size() {
-    cout << (currentPointer + 1) << endl;
+    cout << "Size of the stack: " << (currentPointer + 1) << endl;
 }
 
 void empty() {
