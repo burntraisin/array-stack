@@ -15,6 +15,7 @@ int stack[15];
 int main() {
     int userChoice = 0;
     int element;
+    bool isElementValid = false;
 
     do {
         cout << "Enter a number to perform one of the following on the stack: "
@@ -35,8 +36,12 @@ int main() {
             displayStack();
             break;
         case 2:
-            cout << "Enter an element to push onto the stack: ";
+            cout << "Enter a number between 0 and 99 to push onto the stack: ";
             cin >> element;
+            while (!(element >= 0 && element <= 99)) {
+                cout << "ERROR: Invalid input. Try again: ";
+                cin >> element;
+            }
             push(element);
             displayStack();
             break;
@@ -65,7 +70,7 @@ void push(int element) {
         cout << "ERROR: Stack overflow. Item cannot be pushed." << endl;
     }
     else {
-        currentPointer = currentPointer + 1;
+        currentPointer += 1;
         stack[currentPointer] = element;
     }
 }
@@ -75,7 +80,7 @@ void pop() {
         cout << "ERROR: Stack underflow. Stack is empty." << endl;
     }
     else {
-        currentPointer = currentPointer - 1;
+        currentPointer -= 1;
     }
 }
 
@@ -103,7 +108,7 @@ void empty() {
 
 void displayStack() {
     cout << "Stack: ";
-    for (int i = currentPointer; i > -1; i--) {
+    for (int i = 0; i <= currentPointer; i++) {
         cout << "  " << stack[i] << "  ";
     }
     cout << endl;

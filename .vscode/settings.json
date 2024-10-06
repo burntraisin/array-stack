@@ -25,6 +25,7 @@
         "*.rexx": "rexx",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
