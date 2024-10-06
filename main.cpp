@@ -35,37 +35,37 @@ int main()
 
             switch (userChoice) 
             {
-            case 0:
-                break;
-            case 1:
-                pop();
-                displayStack();
-                break;
-            case 2:
-                cout << "Enter a number between 0 and 99 to push onto the stack: ";
-                cin >> element;
-                while (!(element >= 0 && element <= 99)) 
-                {
-                    cout << "ERROR: Invalid input. Try again: ";
+                case 0:
+                    break;
+                case 1:
+                    pop();
+                    displayStack();
+                    break;
+                case 2:
+                    cout << "Enter a number between 0 and 99 to push onto the stack: ";
                     cin >> element;
-                }
-                push(element);
-                displayStack();
-                break;
-            case 3:
-                top();
-                displayStack();
-                break;
-            case 4:
-                size();
-                displayStack();
-                break;
-            case 5:
-                empty();
-                displayStack();
-                break;
-            default:
-                break;
+                    while (!(element >= 0 && element <= 99)) 
+                    {
+                        cout << "ERROR: Invalid input. Try again: ";
+                        cin >> element;
+                    }
+                    push(element);
+                    displayStack();
+                    break;
+                case 3:
+                    top();
+                    displayStack();
+                    break;
+                case 4:
+                    size();
+                    displayStack();
+                    break;
+                case 5:
+                    empty();
+                    displayStack();
+                    break;
+                default:
+                    break;
             }
         } while (userChoice != 0);
 
