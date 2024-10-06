@@ -62,7 +62,7 @@ int main() {
 
 void push(int element) {
     if (currentPointer > 13) {
-        cout << "Stack overflow. Item cannot be pushed." << endl;
+        cout << "ERROR: Stack overflow. Item cannot be pushed." << endl;
     }
     else {
         currentPointer = currentPointer + 1;
@@ -72,7 +72,7 @@ void push(int element) {
 
 void pop() {
     if (currentPointer < 0) {
-        cout << "Stack underflow. Stack is empty." << endl;
+        cout << "ERROR: Stack underflow. Stack is empty." << endl;
     }
     else {
         currentPointer = currentPointer - 1;
@@ -81,7 +81,7 @@ void pop() {
 
 void top() {
     if (currentPointer < 0) {
-        cout << "Stack underflow. Stack is empty." << endl;
+        cout << "ERROR: Stack underflow. Stack is empty." << endl;
     }
     else {
         cout << stack[currentPointer] << endl;
