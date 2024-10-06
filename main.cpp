@@ -8,6 +8,7 @@ void top();
 void size();
 void empty();
 void displayStack();
+void purge();
 
 int currentPointer = -1;
 int stack[15];
@@ -28,6 +29,7 @@ int main()
             << '\n' << "3. Top"
             << '\n' << "4. Size"
             << '\n' << "5. Empty"
+            << '\n' << "6. Purge"
             << '\n' << "0. Quit"
             << '\n' << "-----------------------------------------------------------"
             << endl;
@@ -62,6 +64,10 @@ int main()
                     break;
                 case 5:
                     empty();
+                    displayStack();
+                    break;
+                case 6:
+                    purge();
                     displayStack();
                     break;
                 default:
@@ -142,4 +148,10 @@ void displayStack()
         cout << "  " << stack[i] << "  ";
     }
     cout << endl;
+}
+
+void purge()
+{
+    currentPointer = -1;
+    cout << "Stack purged." << endl;
 }
