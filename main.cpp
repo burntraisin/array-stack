@@ -89,6 +89,7 @@ void pop() {
         cout << "ERROR: Stack underflow. Stack is empty." << endl;
     }
     else {
+        cout << stack[currentPointer] << " is popped." << endl;
         currentPointer -= 1;
     }
 }
