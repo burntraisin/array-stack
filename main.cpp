@@ -13,56 +13,63 @@ int currentPointer = -1;
 int stack[15];
 
 int main() {
-    int userChoice = 0;
-    int element;
-    bool isElementValid = false;
+    int userChoice = 0, element = -1, restartProgram = 0;
 
     do {
-        cout << "-----------------------------------------------------------"
-        << '\n' << "Enter a number to perform one of the following on the stack: "
-        << '\n' << "1. Pop"
-        << '\n' << "2. Push"
-        << '\n' << "3. Top"
-        << '\n' << "4. Size"
-        << '\n' << "5. Empty"
-        << '\n' << "0. Quit"
-        << '\n' << "-----------------------------------------------------------"
-        << endl;
-        cin >> userChoice;
+        currentPointer = -1;
+        do {
+            cout << "-----------------------------------------------------------"
+            << '\n' << "Enter a number to perform one of the following on the stack: "
+            << '\n' << "1. Pop"
+            << '\n' << "2. Push"
+            << '\n' << "3. Top"
+            << '\n' << "4. Size"
+            << '\n' << "5. Empty"
+            << '\n' << "0. Quit"
+            << '\n' << "-----------------------------------------------------------"
+            << endl;
+            cin >> userChoice;
 
-        switch (userChoice) {
-        case 0:
-            break;
-        case 1:
-            pop();
-            displayStack();
-            break;
-        case 2:
-            cout << "Enter a number between 0 and 99 to push onto the stack: ";
-            cin >> element;
-            while (!(element >= 0 && element <= 99)) {
-                cout << "ERROR: Invalid input. Try again: ";
+            switch (userChoice) {
+            case 0:
+                break;
+            case 1:
+                pop();
+                displayStack();
+                break;
+            case 2:
+                cout << "Enter a number between 0 and 99 to push onto the stack: ";
                 cin >> element;
+                while (!(element >= 0 && element <= 99)) {
+                    cout << "ERROR: Invalid input. Try again: ";
+                    cin >> element;
+                }
+                push(element);
+                displayStack();
+                break;
+            case 3:
+                top();
+                displayStack();
+                break;
+            case 4:
+                size();
+                displayStack();
+                break;
+            case 5:
+                empty();
+                displayStack();
+                break;
+            default:
+                break;
             }
-            push(element);
-            displayStack();
-            break;
-        case 3:
-            top();
-            displayStack();
-            break;
-        case 4:
-            size();
-            displayStack();
-            break;
-        case 5:
-            empty();
-            displayStack();
-            break;
-        default:
-            break;
-        }
-    } while (userChoice != 0);
+        } while (userChoice != 0);
+
+        cout << "Would you like to restart this program?"
+        << '\n' << "0. No"
+        << '\n' << "1. Yes"
+        << endl;
+        cin >> restartProgram;
+    } while (restartProgram == 1);
 
     return 0;
 }
