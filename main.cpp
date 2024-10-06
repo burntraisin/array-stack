@@ -12,12 +12,15 @@ void displayStack();
 int currentPointer = -1;
 int stack[15];
 
-int main() {
+int main()
+{
     int userChoice = 0, element = -1, restartProgram = 0;
 
-    do {
+    do 
+    {
         currentPointer = -1;
-        do {
+        do 
+        {
             cout << "-----------------------------------------------------------"
             << '\n' << "Enter a number to perform one of the following on the stack: "
             << '\n' << "1. Pop"
@@ -30,7 +33,8 @@ int main() {
             << endl;
             cin >> userChoice;
 
-            switch (userChoice) {
+            switch (userChoice) 
+            {
             case 0:
                 break;
             case 1:
@@ -40,7 +44,8 @@ int main() {
             case 2:
                 cout << "Enter a number between 0 and 99 to push onto the stack: ";
                 cin >> element;
-                while (!(element >= 0 && element <= 99)) {
+                while (!(element >= 0 && element <= 99)) 
+                {
                     cout << "ERROR: Invalid input. Try again: ";
                     cin >> element;
                 }
@@ -74,51 +79,66 @@ int main() {
     return 0;
 }
 
-void push(int element) {
-    if (currentPointer > 13) {
+void push(int element) 
+{
+    if (currentPointer > 13) 
+    {
         cout << "ERROR: Stack overflow. Item cannot be pushed." << endl;
     }
-    else {
+    else 
+    {
         currentPointer += 1;
         stack[currentPointer] = element;
     }
 }
 
-void pop() {
-    if (currentPointer < 0) {
+void pop() 
+{
+    if (currentPointer < 0) 
+    {
         cout << "ERROR: Stack underflow. Stack is empty." << endl;
     }
-    else {
+    else 
+    {
         cout << stack[currentPointer] << " is popped." << endl;
         currentPointer -= 1;
     }
 }
 
-void top() {
-    if (currentPointer < 0) {
+void top() 
+{
+    if (currentPointer < 0) 
+    {
         cout << "ERROR: Stack underflow. Stack is empty." << endl;
     }
-    else {
+    else 
+    {
         cout << "Top of the stack: " << stack[currentPointer] << endl;
     }
 }
 
-void size() {
+void size() 
+{
     cout << "Size of the stack: " << (currentPointer + 1) << endl;
 }
 
-void empty() {
-    if (currentPointer < 0) {
+void empty() 
+{
+    if (currentPointer < 0) 
+    {
         cout << "The stack is empty." << endl;
     }
-    else {
+    else 
+    {
         cout << "The stack is NOT empty." << endl;
     }
 }
 
-void displayStack() {
+void displayStack() 
+{
     cout << "Stack: ";
-    for (int i = 0; i <= currentPointer; i++) {
+    for (int i = 0; i <= currentPointer; i++) 
+    {
         cout << "  " << stack[i] << "  ";
     }
     cout << endl;
